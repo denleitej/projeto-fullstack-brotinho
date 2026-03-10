@@ -3,7 +3,7 @@
 Aplicação web fullstack desenvolvida com Flask, SQLAlchemy, Flask-Login e Python. O objetivo era criar uma plataforma de jardinagem que permite que os usuários gerenciem seu jardim 
 e interajam com outros usuários por meio de trocas de plantas e sementes.
 
-Por ser um projeto para o meio acadêmico, deixarei o passo a passo de utilização abaixo:
+Por ser um projeto para o meio acadêmico, deixarei o passo a passo de utilização e algumas observações abaixo:
 ---
 
 ## 🛠️ Configuração do Ambiente
