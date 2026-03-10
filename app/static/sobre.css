@@ -1,0 +1,38 @@
+.div_sobre{
+    color: black;
+    display: flex;
+    height: 100vh;
+    background-color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sobre_box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sobre_box_tex{
+    text-align: justify;
+    font-size: 2.5vh;
+    margin: 0 0 2vh 0;
+    padding: 0 10vh;
+}
+
+
+.sobre_img {
+    width: 55vh;
+    height: 55vh;
+    margin-right: 6vh;
+    border-radius: 100vh; /* Melhor prática para bordas redondas */
+    object-fit: cover; /* Garante que a imagem se ajuste sem deformar */
+}
+
+.sobre_h1 {
+    color: #004211;
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-size: 6vh;
+}

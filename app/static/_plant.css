@@ -1,0 +1,87 @@
+/* app/templates/_plant.html  */
+.table_plant {
+    
+    display: flex;
+    flex-direction: row; /* imagem e conteúdo lado a lado */
+    gap: 2vh;
+    border-radius: 2vh;
+    background-color: white;
+    /* width: 55vh; */
+    padding: 2vh;
+    align-items: center;
+}
+
+.plant_tr {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.plant_plant {
+    margin: 0;
+    margin-top: 2vh;
+    padding: 0;
+    max-width: 100%;
+    word-break: break-word;
+}
+
+.plant_plant2 {
+    display: flex;
+    flex-direction: row;
+    gap: 1vh;
+    align-items: center;
+    margin: 0;
+    margin-top: 2vh;
+    padding: 0;
+    max-width: 100%;
+    word-break: break-word;
+}
+
+
+.plant_plant2 button{
+    color: black;
+    font-size: 1.5vh;
+    text-decoration: none;
+    padding: 1vh;
+    margin-bottom: 2vh;
+    border: 0.3vh solid grey;
+    border-radius: 1vh;
+    background-color: white;
+
+}
+
+.plant_plant2 button:hover{
+    background-color: grey;
+    color: white;
+}
+
+
+
+.plant_img {
+    width: 10vh;
+    height: 10vh;
+    border-radius: 100vh;
+    margin: 0 2vh;
+}
+
+.plant_titulo {
+    text-align: justify;
+    padding: 0;
+    margin: 0;
+    font-size: 2.5vh;
+}
+
+
+.plant_texto_descricao {
+    font-size: 1.5vh;
+    margin: 0;
+    padding: 0 2vh 0 0;
+    text-align: justify;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+
+
+
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='edit_profile.css') }}">
+    <title>Home</title>
+</head>
+
+<body>
+    <!-- Seção Barra de Navegação -->
+    <header class="header">
+        <nav class="header_nav">
+            <ul>
+                <li><a href="{{ url_for('user', username=current_user.username) }}">Voltar para o perfil</a></li>
+            </ul>
+        </nav>
+        <img class="header_img" src="../static/imagens/imagem5.jpg" alt="">
+    </header>
+
+    <div class="div_edit_profile">
+
+        <div class="box_edit_profile">
+            <h1 class="box_titulo">Edite seu Perfil</h1>
+            <form action="" method="post">
+                {{ form.hidden_tag() }}
+                <p class="box_p">
+                    {{ form.username.label }}<br>
+                    {{ form.username(size=32) }}<br>
+                    {% for error in form.username.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p class="box_p">
+                    {{ form.about_me.label }}<br>
+                    {{ form.about_me(cols=50, rows=4) }}<br>
+                    {% for error in form.about_me.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+                <p>{{ form.submit() }}</p>
+            </form>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

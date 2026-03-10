@@ -1,0 +1,45 @@
+PASSO A PASSO PARA CONFIGURAR A MAQUINA:
+
+- py -m venv venv
+- Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+- .\venv\Scripts\activate
+
+
+# PACOTES
+- python.exe -m pip install --upgrade pip    // so faz isso se precisar atualizar; o terminal vai avisar depois que vc instalar o flask 
+- pip install flask
+- pip install ipython
+- pip install flask-wtf
+- pip install flask-sqlalchemy
+- pip install flask-migrate
+- pip install flask-login
+- pip install email-validator
+
+
+# Esse comando cria a pasta "migrations", com arquivos essenciais e o diretório versions, onde os scripts de migração serão salvos. Ja criou o "flask db init"? SE NAO, cria! 
+- flask db init
+
+
+# criando as tabelas
+- flask db migrate -m "users table"
+- flask db migrate -m "plants table"
+- flask db migrate -m "tarefas table"
+- flask db migrate -m "trocas table"
+
+
+# ATUALIZAR O BANCO DEPOIS DE TUDO
+- flask db upgrade // comando para atualizar o banco de dados
+
+# Para entrar direito no flash shell e fazer as consultas
+- flask shell
+
+# PARA APAGAR DADOS, APOS SESSAO DE TESTES
+- flask db downgrade base
+- flask db upgrade
+
+
+# DEPOIS DE TUDO FAZ ISSO
+- set FLASK_APP=projeto_prog_avan.py
+- set DEBUG=1
+- $ENV:FLASK_DEBUG=1
+- flask run

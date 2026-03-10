@@ -1,0 +1,305 @@
+/* app/templates/user.html  */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #3C6501;
+    color: #ffffff;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.header {
+    background-color: #004211;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 11vh; /* !!!!!!! */
+    width: 100%;
+}
+.header_logo {
+    color: #ffffff;
+    background-color: #004211;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    padding: 30px;
+    padding-left: 100px;
+    padding-right: 100px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+.header_img {
+    width: 10vh;
+    height: 10vh;
+    margin-left: 180px;
+    margin-right: 20px;
+    border-radius: 100vh;
+}
+.header_nav ul {
+    padding-right: 40px;
+    display: flex;
+    list-style-type: none;
+    font-size: 20px;
+    gap: 20px;
+}
+.header_nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.header_nav a:hover {
+    text-decoration: underline;
+}
+
+
+
+.div_user {
+    color: black;
+    display: flex;
+    height: 89vh;
+    width: 100%;
+    gap: 10vh;
+    background-color: #ffffff;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row; /* <- alterado de column para row */
+}
+
+
+
+.div_user_1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F1FFE6;
+    padding: 4vh;
+    margin-left: 5vh;
+    height: 67vh;
+    width: 50vh;
+    border-radius: 2vh;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.user_img {
+    width: 15vh;
+    height: 15vh;
+    border-radius: 100vh;
+}
+
+.user_nome{
+    font-size: 5vh;
+    margin: 2vh 0;
+}
+
+.user_about{
+    background-color: white;
+    color: rgb(83, 83, 83);
+    border-radius: 1vh;
+    width: 40vh;
+    padding: 2vh;
+    font-size: 2vh;
+}
+
+.user_status {
+    font-size: 1.5vh;
+    width: 40vh;
+    text-align: center;
+    margin: 0px 0px 8px 0;
+    color: rgb(128, 128, 128);
+}
+
+.user_editar {
+    font-size: 2vh;
+    background-color: #004211;
+    border-radius: 1vh;
+    padding: 2vh;
+    margin-top: 22vh;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.user_editar:hover{
+    background-color: #00791e;
+}
+
+
+
+
+.div_user_2 {
+    background-color: #F1FFE6;
+    border-radius: 2vh;
+    margin-right: 5vh;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    
+}
+
+.user_plantas {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1.5vh 0;
+    padding: 0;
+    width: 100vh;
+}
+
+.user_plantas_titulo{
+    font-size: 4vh;
+    margin: 0;
+    padding: 0;
+}
+
+.user_plantas_adicionar{
+    font-size: 2vh;
+    border: 0.3vh solid grey;
+    background-color: white;
+    border-radius: 1.5vh;
+    padding: 1vh;
+}
+
+.user_plantas_adicionar:hover{
+    background-color: grey;
+    color: white;
+}
+
+
+
+
+.form_plant {
+    font-size: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items:baseline;
+    justify-items: center;
+}
+
+.form_plant_campos{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2vh;
+}
+
+.form_plant label{
+    font-size: 1.5vh;
+}
+
+.form_plant_campos input{
+    font-size: 1.5vh;
+    width: 50vh;
+    background-color: rgb(226, 226, 226);
+    border-radius: 0.8vh;
+    border: 0;
+    padding: 1vh 1.5vh;
+}
+
+.form_plant_campos textarea{
+    font-size: 1.5vh;
+    width: 50vh;
+    height: 20vh;
+    background-color: rgb(226, 226, 226);
+    border-radius: 0.8vh;
+    border: 0;
+    padding: 1vh 1.5vh;
+}
+
+.adicionar {
+    font-size: 2vh;
+    background-color: #3C6501;
+    color: white;
+    border-radius: 1vh;
+    padding: 1vh;
+    margin-right: 1vh;
+    width: 20vh;
+    border: 0;
+}
+
+.adicionar:hover {
+    background-color: #305200;
+}
+
+
+.cancelar {
+    font-size: 2vh;
+    background-color: #a80000;
+    color: white;
+    border-radius: 1vh;
+    padding: 1vh;
+    width: 10vh;
+    border: 0;
+}
+
+.cancelar:hover {
+    background-color: #810000;
+}
+
+
+.plants_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colunas iguais */
+    gap: 3vh; /* espaço entre os cards */
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 65vh;
+    height: 61vh;
+    padding: 3vh;
+}
+
+
+
+
+
+.modal {
+    display: none; /* Inicialmente escondido */
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro com opacidade */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal_conteudo {
+    background-color: #fff;
+    padding: 3vh;
+    border-radius: 1.5vh;
+    max-width: 100vh;
+    margin: auto;
+    color: black;
+}
+
+
+
+
+
+
+ .modal_conteudo2 {
+  background-color: white;
+  margin: 10% auto;
+  padding: 20px;
+  max-width: 50vh;
+  border-radius: 10px;
+}
+
+
+.form_plant_campos {
+  margin-bottom: 10px;
+}
+
+.form_plant_buttons button {
+  margin-right: 10px;
+}
+
+
+

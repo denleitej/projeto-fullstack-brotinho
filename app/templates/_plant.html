@@ -1,0 +1,49 @@
+<!-- app/templates/_plant.html -->
+
+<div class="table_plant">
+    <img class="plant_img" src="../static/imagens/plant04.jpg">
+
+    <div class="plant_tr">
+        <div class="plant_plant">
+            <p class="plant_titulo"><strong>{{ plant.planta }}</strong></p>
+        </div>
+
+        {% if plant.descricao %}
+        <div class="plant_plant">
+            <p class="plant_texto_descricao">{{ plant.descricao }}</p>
+        </div>
+        {% endif %}
+
+        {% if current_user == plant.dono %}
+        <div class="plant_plant2">
+            <!-- Botão Adicionar Tarefa -->
+            <button class="abrir-modal-tarefa" data-plant-id="{{ plant.id }}">Adicionar tarefa</button>
+
+            <!-- Botão Ver mais (caso tenha tarefas) -->
+            {% if plant.tarefas|length > 0 %}
+            <button class="toggle-tarefas-btn" data-plant-id="{{ plant.id }}">Ver mais</button>
+            {% endif %}
+
+            <!-- Botão Deletar (agora ao lado dos outros) -->
+            <form method="POST" action="{{ url_for('delete_plant', plant_id=plant.id) }}" style="display: inline;">
+                <button type="submit"
+                    onclick="return confirm('Tem certeza que deseja deletar esta planta?')">Deletar</button>
+            </form>
+        </div>
+        {% endif %}
+
+        {% if plant.tarefas|length > 0 %}
+        <div class="tarefas-lista" id="tarefas-plant-{{ plant.id }}" style="display:none; margin-top: 10px;">
+            <ul>
+                {% for tarefa in plant.tarefas %}
+                <li>
+                    <strong>{{ tarefa.titulo }}</strong>
+                    {% if tarefa.tipo %} ({{ tarefa.tipo }}) {% endif %} -
+                    {{ tarefa.data_programada.strftime('%d/%m/%Y') }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+</div>

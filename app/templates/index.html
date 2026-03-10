@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='trocas.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='sobre.css')}}">
+
+    <title>Home</title>
+</head>
+
+<body>
+    <!-- Seção Barra de Navegação -->
+    <header class="header">
+        <div class="header_logo">Brotinho</div>
+
+        <nav class="header_nav">
+            <ul>
+                {% if current_user.is_anonymous %}
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#trocas">Trocas</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                {% else %}
+                <li><a href="#home">Home</a></li>
+                <li><a href="#trocas">Trocas</a></li>
+                <li><a href="{{ url_for('user', username=current_user.username) }}">Perfil</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+
+        <img class="header_img" src="../static/imagens/imagem5.jpg" alt="">
+    </header>
+
+    <!-- Seção Home -->
+    <div id="home" class="main_fundo">
+        <div class="main_box">
+            {% if current_user.is_anonymous %}
+            <p class="main_message">Bem-vindo(a) ao Brotinho!</p>
+            {% else %}
+            <p class="main_message">Olá, {{ current_user.username }}.</p>
+            <p class="main_message">Bem vindo(a)!</p>
+            {% endif %}
+        </div>
+    </div>
+    {% if current_user.is_anonymous %}
+
+    <!-- Seção Sobre -->
+    <div id="sobre" class="div_sobre">
+        <h1 class="sobre_h1">Quem somos</h1>
+        <div class="sobre_box">
+            <div class="sobre_box_p">
+                <p class="sobre_box_tex">O Brotinho nasceu da paixão por plantas e da vontade de facilitar a rotina de
+                    quem
+                    ama cultivar. Sabemos que cuidar de plantas vai além de regar de vez em quando — envolve atenção,
+                    paciência, dedicação e muito carinho. Pensando nisso, criamos um espaço onde você pode registrar
+                    cada
+                    uma de suas plantinhas, manter o controle das tarefas diárias, semanais ou mensais e garantir que
+                    nenhuma etapa do cuidado fique para trás.
+                </p>
+                <p class="sobre_box_tex">
+                    Com o Brotinho, você pode adicionar lembretes personalizados, com data, hora, frequência e status
+                    para
+                    acompanhar facilmente o que já foi feito e o que ainda precisa de atenção. Tudo isso em um ambiente
+                    simples, prático e feito para tornar o seu dia a dia mais verde e organizado.
+                </p>
+                <p class="sobre_box_tex">
+                    Mais do que uma ferramenta de organização, queremos criar uma comunidade de amantes da jardinagem.
+                    Acreditamos que o cuidado com as plantas também é uma forma de autocuidado, de se reconectar com a
+                    natureza e de compartilhar experiências com outras pessoas que compartilham essa mesma paixão.
+                    Aqui no Brotinho, cada plantinha tem seu espaço especial e você tem o apoio que precisa para
+                    cultivar
+                    com mais tranquilidade e prazer. Vem crescer com a gente!
+                </p>
+            </div>
+
+            <img class="sobre_img" src="../static/imagens/imagem4.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Seção Trocas -->
+    <div id="trocas" class="div_trocas">
+        
+        <div class="trocas_box_02">
+            <h1 class="trocas_h1">Como fazer suas trocas?</h1>
+            <p class="trocas_p">Acreditamos que cultivar vai além do cuidado com as nossas próprias plantas — é também
+                sobre compartilhar, aprender e trocar. Por isso, o Brotinho conta com uma área exclusiva chamada Trocas,
+                pensada para facilitar a conexão entre os membros da nossa comunidade.
+
+                Na área de Trocas, você pode anunciar ou buscar sementes, mudas, adubos, ferramentas de jardinagem,
+                vasos, livros e qualquer outro item relacionado ao mundo verde. É um espaço onde você pode dar uma nova
+                chance para o que tem sobrando em casa e encontrar o que precisa para continuar cultivando com alegria e
+                consciência.
+
+                Além de ajudar a reduzir o desperdício e incentivar o reaproveitamento, a área de Trocas é uma ótima
+                oportunidade para conhecer outros apaixonados por plantas, trocar dicas, experiências e fortalecer essa
+                rede de cuidado e amizade.
+
+                Seja para encontrar aquela muda especial, trocar aquela semente rara ou simplesmente compartilhar o que
+                você tem de sobra, o espaço é seu. Vamos juntos cultivar trocas cheias de vida, afeto e colaboração.
+            </p>
+        </div>
+    </div>
+    {% else %}
+    {% endif %}
+</body>
+
+</html>

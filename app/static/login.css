@@ -1,0 +1,107 @@
+/* /app/static/login.css */
+
+body {
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.header {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 11vh;
+    width: 100%;
+}
+
+.header_img {
+    width: 10vh;
+    height: 10vh;
+    padding-left: 180px;
+    padding-right: 20px;
+}
+
+.header_nav ul {
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    list-style-type: none;
+    font-size: 20px;
+    gap: 20px;
+
+    padding-top: 39px;
+    padding-bottom: 38px;
+}
+
+.header_nav a {
+    color: #004211;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.header_nav a:hover {
+    text-decoration: underline;
+}
+
+.div_login {
+    background-image: url('/static/imagens/imagem1.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-grow: 1;
+    height: 89vh; /* Garante que a altura não ultrapasse */
+}
+
+.header_p {
+    font-size: 35px;
+    color: #004211;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.login_h1 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.login_box {
+    background-color: #ffffff;
+    padding: 50px;
+    border-radius: 50px;
+}
+
+.login_campos {
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+}
+
+input {
+    border: 0.2vh solid grey;
+    padding: 1vh 1.5vh;
+    border-radius: 1vh;
+    font-size: 2vh;
+}
+
+input[type="submit"], button {
+    background-color: #004211;
+    border: none;
+    color: white;
+    padding: 1.5vh 2vh;
+    font-size: 1.8vh;
+    border-radius: 1.3vh;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover, button:hover {
+    background-color: #00791e;
+}
